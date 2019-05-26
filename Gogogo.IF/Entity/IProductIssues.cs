@@ -23,14 +23,13 @@ The purpose of publishing this library is to make it useful, but without any gua
 You should have received a copy of the GNU Lesser General Public License along with the library. If not, write to:
 Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 */
-    public interface IProductFeature
+    public interface IProductIssues
     {
         ulong id { get; set; }
-        ulong product_id { get; set; }
-        ulong module_id { get; set; }
         ulong creater_id { get; set; }
         ulong last_editor_id { get; set; }
-        string title { get; set; }
+        string poster { get; set; }
+        string tittle { get; set; }
         string remark { get; set; }
         int level { get; set; }
         int state { get; set; }

@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
+using Gogogo.IF;
+using Gogogo.IF.Entity;
 
-namespace Gogogo.IF
+namespace Gogogo.Entity
 {
     /*
     Copyright (C)  2019 Jiang Ming Feng
@@ -23,18 +24,18 @@ namespace Gogogo.IF
     You should have received a copy of the GNU Lesser General Public License along with the library. If not, write to:
     Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
     */
-
-    public interface IAgileProject
+    [Serializable]
+    public class WorkUnit:IWorkUnit
     {
-        ulong creater_id { get; set; }
-        int level { get; set; }
-        int state { get; set; }
-        DateTime? plan_to_start_at { get; set; }
-        DateTime? plan_to_finish_at { get; set; }
-        List<IWorkUnit> work_units { get; set; }
-        List<ILandmark> landmarks { get; set; }
-        DateTime created { get; set; }
+        public int parent_id { get; set; }
+        public int id { get; set; }
+        public int product_id { get; set; }
+        public ulong ver_iter_number { get; set; }
+        public int module_id { get; set; }
+        public ulong creater_id { get; set; }
+        public string title { get; set; }
 
+        public DateTime? start_date { get; set; }
+        public DateTime? finish_date { get; set; }
     }
-   
 }

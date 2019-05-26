@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gogogo.IF", "Gogogo.IF\Gogogo.IF.csproj", "{DE364D31-7D24-4A7A-9B35-A740342B469C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogManCore", "LogManCore\LogManCore.csproj", "{F9854437-9251-4B49-AC31-F7346AFE6FBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCoreConfiguration", "DotNetCoreConfiguration\DotNetCoreConfiguration.csproj", "{F3E5AA52-CBAA-49DC-AEA9-9CD512535A64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gogogo.Entity", "GoGoGo.Entity\GoGoGo.Entity.csproj", "{52A2671A-E28D-468A-9A0A-4752D7C47E2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{DE364D31-7D24-4A7A-9B35-A740342B469C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE364D31-7D24-4A7A-9B35-A740342B469C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE364D31-7D24-4A7A-9B35-A740342B469C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9854437-9251-4B49-AC31-F7346AFE6FBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9854437-9251-4B49-AC31-F7346AFE6FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9854437-9251-4B49-AC31-F7346AFE6FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9854437-9251-4B49-AC31-F7346AFE6FBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3E5AA52-CBAA-49DC-AEA9-9CD512535A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3E5AA52-CBAA-49DC-AEA9-9CD512535A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3E5AA52-CBAA-49DC-AEA9-9CD512535A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3E5AA52-CBAA-49DC-AEA9-9CD512535A64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52A2671A-E28D-468A-9A0A-4752D7C47E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52A2671A-E28D-468A-9A0A-4752D7C47E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52A2671A-E28D-468A-9A0A-4752D7C47E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52A2671A-E28D-468A-9A0A-4752D7C47E2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

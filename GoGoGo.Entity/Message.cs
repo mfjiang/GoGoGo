@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Gogogo.IF;
+using Gogogo.IF.Entity;
 
-namespace Gogogo.IF
+namespace Gogogo.Entity
 {
     /*
     Copyright (C)  2019 Jiang Ming Feng
@@ -24,17 +26,23 @@ namespace Gogogo.IF
     Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
     */
 
-    public interface IAgileProject
+    [Serializable]
+    public class Message : IMessage
     {
-        ulong creater_id { get; set; }
-        int level { get; set; }
-        int state { get; set; }
-        DateTime? plan_to_start_at { get; set; }
-        DateTime? plan_to_finish_at { get; set; }
-        List<IWorkUnit> work_units { get; set; }
-        List<ILandmark> landmarks { get; set; }
-        DateTime created { get; set; }
-
+        public ulong id { get; set; }
+        public ulong reply_to { get; set; }
+        public ulong sender_id { get; set; }
+        public string sender_name { get; set; }
+        public ulong send_to_id { get; set; }
+        public string send_to_name { get; set; }
+        public string send_to_group { get; set; }
+        public ulong product_id { get; set; }
+        public ulong module_id { get; set; }
+        public ulong feature_id { get; set; }
+        public ulong issues_id { get; set; }
+        public ulong task_id { get; set; }
+        public ulong test_record_id { get; set; }
+        public string content { get; set; }
+        public DateTime created { get; set; }
     }
-   
 }
