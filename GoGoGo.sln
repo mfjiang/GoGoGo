@@ -9,7 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogManCore", "LogManCore\Lo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCoreConfiguration", "DotNetCoreConfiguration\DotNetCoreConfiguration.csproj", "{F3E5AA52-CBAA-49DC-AEA9-9CD512535A64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gogogo.Entity", "GoGoGo.Entity\GoGoGo.Entity.csproj", "{52A2671A-E28D-468A-9A0A-4752D7C47E2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoGoGo.Entity", "GoGoGo.Entity\GoGoGo.Entity.csproj", "{52A2671A-E28D-468A-9A0A-4752D7C47E2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{E6F130C4-1B40-4558-9C1D-42C214AB358F}"
+	ProjectSection(SolutionItems) = preProject
+		AgileProject.sql = AgileProject.sql
+		Landmark.sql = Landmark.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
