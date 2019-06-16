@@ -28,11 +28,13 @@ namespace Gogogo.Entity
     [Serializable]
     public class AglieProject : IAgileProject
     {
+        public ulong id { get; set; }
+        public string title { get; set; }
         public ulong creater_id { get; set; }
         public int level { get; set; }
         public int state { get; set; }
-        public DateTime? plan_to_start_at { get; set; }
-        public DateTime? plan_to_finish_at { get; set; }
+        public DateTime? start_date { get; set; }
+        public DateTime? finish_date { get; set; }
         public List<IWorkUnit> work_units { get; set; }
         public List<ILandmark> landmarks { get; set; }
         public DateTime created { get; set; }

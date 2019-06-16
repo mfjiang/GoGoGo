@@ -25,10 +25,12 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
 */
     public interface ILandmark
     {
+        ulong id { get; set; }
+        ulong project_id { get; set; }
         DateTime deadline { get; set; }
         string title { get; set; }
         string remark { get; set; }
         int state { get; set; }
-        DateTime? finished { get; set; }
+        DateTime? finish_date { get; set; }
     }
 }

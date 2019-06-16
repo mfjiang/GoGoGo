@@ -28,10 +28,12 @@ namespace Gogogo.Entity
     [Serializable]
     public class Landmark : ILandmark
     {
+        public ulong id { get; set; }
+        public ulong project_id { get; set; }
         public DateTime deadline { get; set; }
         public string title { get; set; }
         public string remark { get; set ; }
         public int state { get; set; }
-        public DateTime? finished { get; set; }
+        public DateTime? finish_date { get; set; }
     }
 }
