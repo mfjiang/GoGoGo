@@ -16,3 +16,12 @@ E:/OneDrive/工作同步/ShareCode/DotNetCoreCoding/DotNetCoreCoding/Gogogo.IF/o
 /Users/mac/Downloads/OneDrive/工作同步/ShareCode/github/GoGoGo/Gogogo.IF/obj/Debug/netcoreapp2.1/Gogogo.IF.AssemblyInfo.cs
 /Users/mac/Downloads/OneDrive/工作同步/ShareCode/github/GoGoGo/Gogogo.IF/obj/Debug/netcoreapp2.1/Gogogo.IF.dll
 /Users/mac/Downloads/OneDrive/工作同步/ShareCode/github/GoGoGo/Gogogo.IF/obj/Debug/netcoreapp2.1/Gogogo.IF.pdb
+E:\WorkSpace\SouceCode\GitHub\Gogogo\Gogogo.IF\bin\Debug\netcoreapp2.1\Gogogo.IF.deps.json
+E:\WorkSpace\SouceCode\GitHub\Gogogo\Gogogo.IF\bin\Debug\netcoreapp2.1\Gogogo.IF.dll
+E:\WorkSpace\SouceCode\GitHub\Gogogo\Gogogo.IF\bin\Debug\netcoreapp2.1\Gogogo.IF.pdb
+E:\WorkSpace\SouceCode\GitHub\Gogogo\Gogogo.IF\obj\Debug\netcoreapp2.1\Gogogo.IF.csprojAssemblyReference.cache
+E:\WorkSpace\SouceCode\GitHub\Gogogo\Gogogo.IF\obj\Debug\netcoreapp2.1\Gogogo.IF.csproj.CoreCompileInputs.cache
+E:\WorkSpace\SouceCode\GitHub\Gogogo\Gogogo.IF\obj\Debug\netcoreapp2.1\Gogogo.IF.AssemblyInfoInputs.cache
+E:\WorkSpace\SouceCode\GitHub\Gogogo\Gogogo.IF\obj\Debug\netcoreapp2.1\Gogogo.IF.AssemblyInfo.cs
+E:\WorkSpace\SouceCode\GitHub\Gogogo\Gogogo.IF\obj\Debug\netcoreapp2.1\Gogogo.IF.dll
+E:\WorkSpace\SouceCode\GitHub\Gogogo\Gogogo.IF\obj\Debug\netcoreapp2.1\Gogogo.IF.pdb

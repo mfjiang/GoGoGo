@@ -27,15 +27,15 @@ namespace Gogogo.Entity
     */
 
     [Serializable]
-    public class Message : IMessage
+    public class Discussion : IDiscussion
     {
         public ulong id { get; set; }
         public ulong reply_to { get; set; }
         public ulong sender_id { get; set; }
         public string sender_name { get; set; }
-        public ulong send_to_id { get; set; }
-        public string send_to_name { get; set; }
-        public string send_to_group { get; set; }
+        //public ulong send_to_id { get; set; }
+        //public string send_to_name { get; set; }
+        //public string send_to_group { get; set; }
         public ulong product_id { get; set; }
         public ulong module_id { get; set; }
         public ulong feature_id { get; set; }

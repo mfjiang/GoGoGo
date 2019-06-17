@@ -3,3 +3,8 @@
 ################################################################################
 
 /GoGoGo.Entity/obj
+/GoGoGo.Entity/bin/Debug/netcoreapp2.2
+/.vs/GoGoGo/v15/Server/sqlite3
+/DotNetCoreConfiguration/obj
+/LogManCore/obj/Debug/netcoreapp2.2
+/LogManCore/obj

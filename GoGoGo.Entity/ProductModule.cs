@@ -26,10 +26,13 @@ namespace Gogogo.Entity
     */
 
     [Serializable]
-    public class ProductModule
+    public class ProductModule: IProductModule
     {
         public ulong id { get; set; }
-        public ulong iteration_number { get; set; }
+        public string module_code { get; set; }
+        public ulong creator_id { get; set; }
+        public ulong last_editor_id { get; set; }
+        public ulong version_id { get; set; }
         public ulong parent_id { get; set; }
         public ulong product_id { get; set; }
         public string title { get; set; }

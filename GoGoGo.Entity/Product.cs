@@ -35,7 +35,8 @@ namespace Gogogo.Entity
         public string main_ver { get; set; }
         public string source_uri { get; set; }
         public string open_api_uri { get; set; }
-        public ulong creater_id { get; set; }
+        public ulong creator_id { get; set; }
+        public ulong last_editor_id { get; set; }
         public int level { get; set; }
         public int state { get; set; }
         public DateTime created { get; set; }

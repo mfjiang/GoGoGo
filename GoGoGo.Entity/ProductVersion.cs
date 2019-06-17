@@ -28,7 +28,7 @@ namespace Gogogo.Entity
     [Serializable]
     public class ProductVersion:IProductVersion
     {
-        public ulong iteration_number { get; set; }
+        public ulong id { get; set; }
         public ulong product_id { get; set; }
         public string remark { get; set; }
         public int level { get; set; }

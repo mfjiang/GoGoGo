@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
+using Gogogo.IF;
+using Gogogo.IF.Entity;
 
-namespace Gogogo.IF.Entity
+namespace Gogogo.Entity
 {
     /*
 Copyright (C)  2019 Jiang Ming Feng
@@ -23,23 +24,17 @@ The purpose of publishing this library is to make it useful, but without any gua
 You should have received a copy of the GNU Lesser General Public License along with the library. If not, write to:
 Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 */
-    public interface IMessage
+    [Serializable]
+    public class Issues : IIssues
     {
-        ulong id { get; set; }
-        ulong reply_to { get; set; }
-        ulong sender_id { get; set; }
-        string sender_name { get; set; }
-        ulong send_to_id { get; set; }
-        string send_to_name { get; set; }
-        string send_to_group { get; set; }
-        ulong product_id { get; set; }
-        ulong module_id { get; set; }
-        ulong feature_id { get; set; }
-        ulong issues_id { get; set; }
-        ulong task_id { get; set; }
-        ulong test_record_id { get; set; }
-        string content { get; set; }
-        DateTime created { get; set; }
-
+        public ulong id { get; set; }
+        public ulong creator_id { get; set; }
+        public ulong last_editor_id { get; set; }
+        public string from_who { get; set; }
+        public string title { get; set; }
+        public string remark { get; set; }
+        public int level { get; set; }
+        public int state { get; set; }
+        public DateTime created { get; set; }
     }
 }

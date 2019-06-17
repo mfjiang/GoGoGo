@@ -25,7 +25,7 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
 */
     public interface IProductVersion
     {
-        ulong iteration_number { get; set; }
+        ulong id { get; set; }
         ulong product_id { get; set; }
         string remark { get; set; }
         int level { get; set; }

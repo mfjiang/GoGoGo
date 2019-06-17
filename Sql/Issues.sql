@@ -10,27 +10,28 @@ Target Server Type    : MYSQL
 Target Server Version : 80013
 File Encoding         : 65001
 
-Date: 2019-06-17 16:55:34
+Date: 2019-06-17 16:55:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for agileproject
+-- Table structure for issues
 -- ----------------------------
-DROP TABLE IF EXISTS `agileproject`;
-CREATE TABLE `agileproject` (
+DROP TABLE IF EXISTS `issues`;
+CREATE TABLE `issues` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `creator_id` bigint(20) unsigned NOT NULL,
+  `last_editor_id` bigint(20) NOT NULL DEFAULT '0',
+  `from_who` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'unknown',
   `title` varchar(255) NOT NULL,
-  `creator_id` bigint(20) NOT NULL,
-  `level` int(3) DEFAULT '0',
-  `state` int(3) DEFAULT NULL,
-  `start_date` datetime DEFAULT NULL,
-  `finish_date` datetime DEFAULT NULL,
+  `remark` text NOT NULL,
+  `level` int(4) NOT NULL DEFAULT '0',
+  `state` int(4) NOT NULL,
   `created` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
--- Records of agileproject
+-- Records of issues
 -- ----------------------------
