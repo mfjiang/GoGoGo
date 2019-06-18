@@ -25,17 +25,21 @@ namespace Gogogo.Entity
     Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
     */
     [Serializable]
-    public class WorkUnit:IWorkUnit
+    public class WorkUnit : IWorkUnit
     {
-        public int parent_id { get; set; }
-        public int id { get; set; }
-        public int product_id { get; set; }
-        public ulong ver_iter_number { get; set; }
-        public int module_id { get; set; }
-        public ulong creater_id { get; set; }
+        public ulong project_id { get; set; }
+        public ulong parent_id { get; set; }
+        public ulong id { get; set; }
+        public ulong product_id { get; set; }
+        public ulong version_id { get; set; }
+        public ulong module_id { get; set; }
+        public ulong creator_id { get; set; }
+        public ulong principal_id { get; set; }
         public string title { get; set; }
-
         public DateTime? start_date { get; set; }
         public DateTime? finish_date { get; set; }
+        public int level { get; set; }
+        public int state { get; set; }
+        public DateTime created { get; set; }
     }
 }

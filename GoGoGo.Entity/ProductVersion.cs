@@ -29,7 +29,9 @@ namespace Gogogo.Entity
     public class ProductVersion:IProductVersion
     {
         public ulong id { get; set; }
+        public string version_code { get; set; }
         public ulong product_id { get; set; }
+        public ulong creator_id { get; set; }
         public string remark { get; set; }
         public int level { get; set; }
         public int state { get; set; }

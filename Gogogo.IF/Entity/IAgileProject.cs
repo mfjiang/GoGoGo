@@ -28,7 +28,9 @@ namespace Gogogo.IF
     {
         ulong id { get; set; }
         string title { get; set; }
-        ulong creater_id { get; set; }
+        ulong creator_id { get; set; }
+        ulong chife_manager_id { get; set; }
+        ulong principal_id { get; set; }
         int level { get; set; }
         int state { get; set; }
         DateTime? start_date { get; set; }

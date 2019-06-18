@@ -7,6 +7,7 @@ namespace Gogogo.IF
     public interface IIssues
     {
         ulong id { get; set; }
+        ulong product_id { get; set; }
         ulong creator_id { get; set; }
         ulong last_editor_id { get; set; }
         string from_who { get; set; }

@@ -26,14 +26,18 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
 
     public interface IWorkUnit
     {
-        int parent_id { get; set; }
-        int id { get; set; }
-        int product_id { get; set; }
-        ulong ver_iter_number { get; set; }
-        int module_id { get; set; }
-        ulong creater_id { get; set; }
+        ulong project_id { get; set; }
+        ulong parent_id { get; set; }
+        ulong id { get; set; }
+        ulong product_id { get; set; }
+        ulong version_id { get; set; }
+        ulong module_id { get; set; }
+        ulong creator_id { get; set; }
         string title { get; set; }
         DateTime? start_date { get; set; }
         DateTime? finish_date { get; set; }
+        int level { get; set; }
+        int state { get; set; }
+        DateTime created { get; set; }
     }
 }
