@@ -39,6 +39,7 @@ namespace Gogogo.Entity
         public string expected_results { get; set; }
         public string tested_results { get; set; }
         public bool quality_pass { get; set; }
+        public int state { get; set; }
         public DateTime created { get; set; }
     }
 }

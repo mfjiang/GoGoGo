@@ -36,6 +36,7 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
         string expected_results { get; set; }
         string tested_results { get; set; }
         bool quality_pass { get; set; }
+        int state { get; set; }
         DateTime created { get; set; }
     }
 }
