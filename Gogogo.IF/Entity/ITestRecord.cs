@@ -26,15 +26,16 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
     public interface ITestRecord
     {
         ulong id { get; set; }
-        ulong iteration_id { get; set; }
-        ulong product_id { get; set; }
+        ulong version_id { get; set; }
+        ulong product_id { get; set; }       
         ulong module_id { get; set; }
         ulong use_case_id { get; set; }
-        ulong creater_id { get; set; }
+        ulong creator_id { get; set; }
+        ulong confirm_by_id { get; set; }
         string remark { get; set; }
         int report_type { get; set; }
         ulong report_to { get; set; }
-        ulong executor_id { get; set; }
+        ulong tester_id { get; set; }
         string report_to_cc { get; set; }
         int level { get; set; }
         int state { get; set; }

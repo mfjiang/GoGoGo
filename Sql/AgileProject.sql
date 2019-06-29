@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80013
 File Encoding         : 65001
 
-Date: 2019-06-17 16:55:34
+Date: 2019-06-19 15:26:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,6 +23,8 @@ CREATE TABLE `agileproject` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `creator_id` bigint(20) NOT NULL,
+  `chife_manager_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `principal_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `level` int(3) DEFAULT '0',
   `state` int(3) DEFAULT NULL,
   `start_date` datetime DEFAULT NULL,

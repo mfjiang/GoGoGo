@@ -28,18 +28,21 @@ namespace Gogogo.Entity
     public class WorkTask:IWorkTask
     {
         public ulong id { get; set; }
-        public ulong creater_id { get; set; }
-        public ulong owner_id { get; set; }
+        public ulong creator_id { get; set; }
+        public ulong principal_id { get; set; }
         public int task_type { get; set; }
         public string title { get; set; }
         public int level { get; set; }
         public int state { get; set; }
-        public ulong product_id { get; set; }
-        public ulong module_id { get; set; }
+        public ulong workunit_id { get; set; }
         public ulong test_record_id { get; set; }
-
+        public int confirm_state { get; set; } // confirm if access the task by principal member
+        public int review_state { get; set; } // review the task by manager
         public DateTime? confirm_time { get; set; }
+        public DateTime? review_time { get; set; }
         public DateTime? close_time { get; set; }
+        public ulong confirm_by_id { get; set; }
+        public ulong review_by_id { get; set; }
         public DateTime created { get; set; }
     }
 }

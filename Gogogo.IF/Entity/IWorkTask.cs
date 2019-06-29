@@ -26,17 +26,20 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
     public interface IWorkTask
     {
         ulong id { get; set; }
-        ulong creater_id { get; set; }
-        ulong owner_id { get; set; }
+        ulong creator_id { get; set; }
+        ulong principal_id { get; set; }
         int task_type { get; set; }
         string title { get; set; }
         int level { get; set; }
         int state { get; set; }
-        ulong product_id { get; set; }
-        ulong module_id { get; set; }
+        ulong workunit_id { get; set; }
         ulong test_record_id { get; set; }
-       
+        int confirm_state { get; set; } // confirm if access the task by principal member
+        int review_state { get; set; } // review the task by manager
+        ulong confirm_by_id { get; set; }
+        ulong review_by_id { get; set; }
         DateTime? confirm_time { get; set; }
+        DateTime? review_time { get; set; }
         DateTime? close_time { get; set; }
         DateTime created { get; set; }
     }

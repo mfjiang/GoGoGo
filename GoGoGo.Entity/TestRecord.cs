@@ -29,15 +29,16 @@ namespace Gogogo.Entity
     public class TestRecord:ITestRecord
     {
         public ulong id { get; set; }
-        public ulong iteration_id { get; set; }
+        public ulong version_id { get; set; }
         public ulong product_id { get; set; }
         public ulong module_id { get; set; }
         public ulong use_case_id { get; set; }
-        public ulong creater_id { get; set; }
+        public ulong creator_id { get; set; }
+        public ulong confirm_by_id { get; set; }
         public string remark { get; set; }
         public int report_type { get; set; }
         public ulong report_to { get; set; }
-        public ulong executor_id { get; set; }
+        public ulong tester_id { get; set; }
         public string report_to_cc { get; set; }
         public int level { get; set; }
         public int state { get; set; }

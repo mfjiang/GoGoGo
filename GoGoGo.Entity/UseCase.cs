@@ -31,7 +31,7 @@ namespace Gogogo.Entity
         public ulong id { get; set; }
         public ulong product_id { get; set; }
         public ulong module_id { get; set; }
-        public ulong creater_id { get; set; }
+        public ulong creator_id { get; set; }
         public ulong last_editor_id { get; set; }
         public string test_path { get; set; }
         public string remark { get; set; }
