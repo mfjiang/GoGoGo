@@ -8,3 +8,7 @@
 /DotNetCoreConfiguration/obj
 /LogManCore/obj/Debug/netcoreapp2.2
 /LogManCore/obj
+/GoGoGo.DataStorage/bin/Debug/netcoreapp2.2
+/GoGoGo.DataStorage/obj/Debug/netcoreapp2.2
+/GoGoGo.DataStorage/obj
+/.vs/GoGoGo/v16/Server/sqlite3
