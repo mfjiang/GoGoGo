@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Gogogo.IF;
 using Gogogo.IF.Entity;
@@ -24,9 +26,12 @@ namespace Gogogo.Entity
     You should have received a copy of the GNU Lesser General Public License along with the library. If not, write to:
     Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
     */
+
     [Serializable]
+    [Table("usergroup")]
     public class UserGroup:IUserGroup
     {
+        [Key]
         public string group_name { get; set; }
         public string users { get; set; }//id1,id2,id3,...
         public ulong creator_id { get; set; }

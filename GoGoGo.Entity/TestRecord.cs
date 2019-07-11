@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Gogogo.IF;
 using Gogogo.IF.Entity;
@@ -26,8 +28,10 @@ namespace Gogogo.Entity
     */
 
     [Serializable]
+    [Table("testrecord")]
     public class TestRecord:ITestRecord
     {
+        [Key]
         public ulong id { get; set; }
         public ulong version_id { get; set; }
         public ulong product_id { get; set; }

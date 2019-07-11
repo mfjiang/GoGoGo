@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Gogogo.IF;
 
@@ -26,8 +28,10 @@ namespace Gogogo.Entity
     */
 
     [Serializable]
+    [Table("landmark")]
     public class Landmark : ILandmark
     {
+        [Key]
         public ulong id { get; set; }
         public ulong project_id { get; set; }
         public DateTime deadline { get; set; }

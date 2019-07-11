@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Gogogo.IF;
 using Gogogo.IF.Entity;
@@ -26,8 +28,10 @@ namespace Gogogo.Entity
     */
 
     [Serializable]
+    [Table("productmodule")]
     public class ProductModule: IProductModule
     {
+        [Key]
         public ulong id { get; set; }
         public string module_code { get; set; }
         public ulong creator_id { get; set; }

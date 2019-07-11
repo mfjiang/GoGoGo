@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Gogogo.IF;
 
@@ -26,8 +28,10 @@ namespace Gogogo.Entity
     */
 
     [Serializable]
+    [Table("aglieproject")]
     public class AglieProject : IAgileProject
     {
+        [Key]
         public ulong id { get; set; }
         public string title { get; set; }
         public ulong creator_id { get; set; }

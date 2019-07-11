@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Gogogo.IF;
 using Gogogo.IF.Entity;
@@ -27,8 +29,10 @@ namespace Gogogo.Entity
     */
 
     [Serializable]
+    [Table("discussion")]
     public class Discussion : IDiscussion
     {
+        [Key]
         public ulong id { get; set; }
         public ulong reply_to { get; set; }
         public ulong sender_id { get; set; }

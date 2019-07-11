@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Gogogo.IF;
 using Gogogo.IF.Entity;
@@ -25,11 +27,13 @@ namespace Gogogo.Entity
     Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
     */
     [Serializable]
+    [Table("workunit")]
     public class WorkUnit : IWorkUnit
     {
+        [Key]
+        public ulong id { get; set; }
         public ulong project_id { get; set; }
         public ulong parent_id { get; set; }
-        public ulong id { get; set; }
         public ulong product_id { get; set; }
         public ulong version_id { get; set; }
         public ulong module_id { get; set; }

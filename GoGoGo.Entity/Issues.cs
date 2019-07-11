@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Gogogo.IF;
 using Gogogo.IF.Entity;
@@ -25,8 +27,10 @@ You should have received a copy of the GNU Lesser General Public License along w
 Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 */
     [Serializable]
+    [Table("issues")]
     public class Issues : IIssues
     {
+        [Key]
         public ulong id { get; set; }
         public ulong product_id { get; set; }
         public ulong creator_id { get; set; }

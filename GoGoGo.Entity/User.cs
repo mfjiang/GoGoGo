@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Gogogo.IF;
 namespace Gogogo.Entity
@@ -24,8 +26,11 @@ namespace Gogogo.Entity
     Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
     */
 
+    [Serializable]
+    [Table("user")]
     public class User:IUser
     {
+        [Key]
         public ulong id { get; set; }
         public string wx_uuid { get; set; }
         public string wx_name { get; set; }
