@@ -23,7 +23,7 @@ The purpose of publishing this library is to make it useful, but without any gua
 You should have received a copy of the GNU Lesser General Public License along with the library. If not, write to:
 Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 */
-    public interface ILandmark
+    public interface IRoadMap
     {
         ulong id { get; set; }
         ulong project_id { get; set; }

@@ -36,7 +36,7 @@ namespace Gogogo.IF
         DateTime? start_date { get; set; }
         DateTime? finish_date { get; set; }
         List<IWorkUnit> work_units { get; set; }
-        List<ILandmark> landmarks { get; set; }
+        List<IRoadMap> landmarks { get; set; }
         DateTime created { get; set; }
 
     }

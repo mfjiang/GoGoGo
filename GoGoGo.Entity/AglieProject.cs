@@ -42,7 +42,7 @@ namespace Gogogo.Entity
         public DateTime? start_date { get; set; }
         public DateTime? finish_date { get; set; }
         public List<IWorkUnit> work_units { get; set; }
-        public List<ILandmark> landmarks { get; set; }
+        public List<IRoadMap> landmarks { get; set; }
         public DateTime created { get; set; }
     }
 }

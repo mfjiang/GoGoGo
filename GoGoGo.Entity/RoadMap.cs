@@ -28,8 +28,8 @@ namespace Gogogo.Entity
     */
 
     [Serializable]
-    [Table("landmark")]
-    public class Landmark : ILandmark
+    [Table("roadmap")]
+    public class RoadMap : IRoadMap
     {
         [Key]
         public ulong id { get; set; }
