@@ -32,89 +32,18 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
         public AppSettings() { }
 
         /// <summary>
+        /// 主数据库名称
+        /// </summary>
+        public string DBName { get; set; }
+
+        /// <summary>
         /// 日志路径
         /// </summary>
         public string LogManPath { get; set; }
 
         /// <summary>
-        /// Linux日志路径
-        /// </summary>
-        public string LogManPathLinux { get; set; }
-
-        /// <summary>
-        /// 游服登录握手地址
-        /// </summary>
-        public string GameServerLoginUri { get; set; }
-
-        /// <summary>
         /// Redis连接串
         /// </summary>
-        public string RedisConn { get; set; }
-
-        /// <summary>
-        /// 用户中心数据库名称
-        /// </summary>
-        public string OAuthCenterDBName { get; set; }
-
-        /// <summary>
-        /// 游戏日志数据库名称
-        /// </summary>
-        public string GamePlayDataDBName { get; set; }
-
-        /// <summary>
-        /// 游戏系统数据库名称
-        /// </summary>
-        public string GameSystemDataDBName { get; set; }
-
-        /// <summary>
-        /// 文件中心数据库名称
-        /// </summary>
-        public string FileCenterDBName { get; set; }
-
-        /// <summary>
-        /// 分布式ID生成库名称
-        /// </summary>
-        public string DistributedIDDBName { get; set; }
-
-        /// <summary>
-        /// 是否启用短信接口
-        /// </summary>
-        public bool SMS_Enabled { get; set; } = false;
-
-        /// <summary>
-        /// 短信接口账号
-        /// </summary>
-        public string SMS_Account { get; set; }
-
-        /// <summary>
-        /// 短信接口账号密码
-        /// </summary>
-        public string SMS_PWD { get; set; }
-
-        /// <summary>
-        /// 短信接口地址(?之前)
-        /// </summary>
-        public string SMS_Uri { get; set; }
-
-        /// <summary>
-        /// 短信前置标题
-        /// </summary>
-        public string SMS_Tittle { get; set; }
-
-        /// <summary>
-        /// 返回短信配置实体
-        /// </summary>
-        /// <returns></returns>
-        public SMSConfig GetSMSConfig()
-        {
-            return new SMSConfig()
-            {
-                Account = this.SMS_Account,
-                Uri = this.SMS_Uri,
-                Enabled = this.SMS_Enabled,
-                PWD = this.SMS_PWD,
-                Tittle = this.SMS_Tittle
-            };
-        }
+        public string RedisConn { get; set; }      
     }
 }
