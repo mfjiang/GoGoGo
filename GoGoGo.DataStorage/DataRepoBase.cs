@@ -53,6 +53,7 @@ namespace GoGoGo.DataStorage
             {
                 m_MysqlConn.Open();
                 r = m_MysqlConn.Insert<TEntity>(entity);
+                m_MysqlConn.Close();
             }
             return r;
         }
@@ -64,6 +65,7 @@ namespace GoGoGo.DataStorage
             {
                 m_MysqlConn.Open();
                 r = m_MysqlConn.Get<TEntity>(id);
+                m_MysqlConn.Close();
             }
             return r;
         }
@@ -77,19 +79,21 @@ namespace GoGoGo.DataStorage
                 string sql = String.Format("select count(*) as total from `{0}` where `{1}`=@{2}", tableName, keyName, key);
                 MySqlParameter p1 = new MySqlParameter("@" + key, key);
                 MySqlParameter[] parameters = new MySqlParameter[] { p1 };
-                r = m_MysqlConn.ExecuteScalar<long>(sql,parameters);
+                r = m_MysqlConn.ExecuteScalar<long>(sql, parameters);
+                m_MysqlConn.Close();
             }
             return r > 0;
         }
 
-        public virtual long Count(string tableName, string sqlWhere,params MySqlParameter[] parameters)
+        public virtual long Count(string tableName, string sqlWhere, params MySqlParameter[] parameters)
         {
             long r = 0;
             using (m_MysqlConn = new MySqlConnection(m_ConnStr))
             {
                 m_MysqlConn.Open();
-                string sql = String.Format("select count(*) as total from `{0}` where {1}", tableName,sqlWhere);
-                r = m_MysqlConn.ExecuteScalar<long>(sql,parameters);
+                string sql = String.Format("select count(*) as total from `{0}` where {1}", tableName, sqlWhere);
+                r = m_MysqlConn.ExecuteScalar<long>(sql, parameters);
+                m_MysqlConn.Close();
             }
             return r;
         }
@@ -101,6 +105,7 @@ namespace GoGoGo.DataStorage
             {
                 m_MysqlConn.Open();
                 r = m_MysqlConn.QuerySingleOrDefault<TEntity>(cmd);
+                m_MysqlConn.Close();
             }
             return r;
         }
@@ -112,6 +117,7 @@ namespace GoGoGo.DataStorage
             {
                 m_MysqlConn.Open();
                 r = m_MysqlConn.Query<TEntity>(cmd);
+                m_MysqlConn.Close();
             }
             return r;
         }
@@ -123,6 +129,7 @@ namespace GoGoGo.DataStorage
             {
                 m_MysqlConn.Open();
                 r = m_MysqlConn.Update<TEntity>(entity);
+                m_MysqlConn.Close();
             }
             return r;
         }
@@ -134,6 +141,72 @@ namespace GoGoGo.DataStorage
             {
                 m_MysqlConn.Open();
                 r = m_MysqlConn.Delete<TEntity>(entity);
+                m_MysqlConn.Close();
+            }
+            return r;
+        }
+
+        public virtual bool Delete(string tableName, string keyName, ulong key)
+        {
+            bool r = false;
+            using (m_MysqlConn = new MySqlConnection(m_ConnStr))
+            {
+                m_MysqlConn.Open();
+                string sql = $"delete from {tableName} where `{keyName}` = {key}";
+                r = m_MysqlConn.Execute(sql) > 0;
+                m_MysqlConn.Close();
+            }
+            return r;
+        }
+
+        public virtual bool Delete(string tableName, string keyName, uint key)
+        {
+            bool r = false;
+            using (m_MysqlConn = new MySqlConnection(m_ConnStr))
+            {
+                m_MysqlConn.Open();
+                string sql = $"delete from {tableName} where `{keyName}` = {key}";
+                r = m_MysqlConn.Execute(sql) > 0;
+                m_MysqlConn.Close();
+            }
+            return r;
+        }
+
+        public virtual bool Delete(string tableName, string keyName, long key)
+        {
+            bool r = false;
+            using (m_MysqlConn = new MySqlConnection(m_ConnStr))
+            {
+                m_MysqlConn.Open();
+                string sql = $"delete from {tableName} where `{keyName}` = {key}";
+                r = m_MysqlConn.Execute(sql) > 0;
+                m_MysqlConn.Close();
+            }
+            return r;
+        }
+
+        public virtual bool Delete(string tableName, string keyName, Int32 key)
+        {
+            bool r = false;
+            using (m_MysqlConn = new MySqlConnection(m_ConnStr))
+            {
+                m_MysqlConn.Open();
+                string sql = $"delete from {tableName} where `{keyName}` = {key}";
+                r = m_MysqlConn.Execute(sql) > 0;
+                m_MysqlConn.Close();
+            }
+            return r;
+        }
+
+        public virtual bool Delete(string tableName, string keyName, string key)
+        {
+            bool r = false;
+            using (m_MysqlConn = new MySqlConnection(m_ConnStr))
+            {
+                m_MysqlConn.Open();
+                string sql = $"delete from {tableName} where `{keyName}` = '{key}'";
+                r = m_MysqlConn.Execute(sql) > 0;
+                m_MysqlConn.Close();
             }
             return r;
         }
