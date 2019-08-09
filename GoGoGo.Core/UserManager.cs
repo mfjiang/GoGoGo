@@ -28,9 +28,9 @@ namespace GoGoGo.Core
         }
 
         #region interface implementation
-        long IUserManager.Add(IUser user)
+        ulong IUserManager.Add(IUser user)
         {
-            long uid = 0;
+            ulong uid = 0;
             uid = m_UserRepo.Insert((User)user);
             return uid;
         }

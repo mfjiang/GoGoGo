@@ -13,3 +13,6 @@
 /GoGoGo.DataStorage/obj
 /.vs/GoGoGo/v16/Server/sqlite3
 /.vs/GoGoGo/DesignTimeBuild
+/UnitTest/GoGoGo.DataStorage.UnitTest/bin/Debug/netcoreapp2.2
+/GoGoGo.Core/bin/Debug/netcoreapp2.2
+/DotNetCoreConfiguration/bin/Debug/netcoreapp2.2

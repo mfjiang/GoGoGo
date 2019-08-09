@@ -36,6 +36,7 @@ namespace Gogogo.Entity
         public string wx_name { get; set; }
         public string nick_name { get; set; }
         public string real_name { get; set; }
+        public string title { get; set; }
         public string pwd { get; set; }
         public string group { get; set; }
         public string employee_no { get; set; }

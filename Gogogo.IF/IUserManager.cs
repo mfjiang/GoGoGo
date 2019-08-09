@@ -6,7 +6,7 @@ namespace Gogogo.IF
 {
     public interface IUserManager
     {
-        long Add(IUser user);
+        ulong Add(IUser user);
         bool Update(IUser user);
         bool Delete(ulong id);
         IUser Get(ulong id);

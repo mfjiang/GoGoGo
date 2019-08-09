@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoGoGo.Entity", "GoGoGo.Ent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoGoGo.DataStorage", "GoGoGo.DataStorage\GoGoGo.DataStorage.csproj", "{B8F7E717-E387-4E89-8EAE-9FA0868123C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoGoGo.Core", "GoGoGo.Core\GoGoGo.Core.csproj", "{BF3D7CC9-B79C-46B2-827D-7FC0DAD9041D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoGoGo.Core", "GoGoGo.Core\GoGoGo.Core.csproj", "{BF3D7CC9-B79C-46B2-827D-7FC0DAD9041D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoGoGo.DataStorage.UnitTest", "UnitTest\GoGoGo.DataStorage.UnitTest\GoGoGo.DataStorage.UnitTest.csproj", "{49404C16-C8E0-457C-81F4-73D4CB2CAAB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{BF3D7CC9-B79C-46B2-827D-7FC0DAD9041D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF3D7CC9-B79C-46B2-827D-7FC0DAD9041D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF3D7CC9-B79C-46B2-827D-7FC0DAD9041D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49404C16-C8E0-457C-81F4-73D4CB2CAAB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49404C16-C8E0-457C-81F4-73D4CB2CAAB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49404C16-C8E0-457C-81F4-73D4CB2CAAB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49404C16-C8E0-457C-81F4-73D4CB2CAAB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

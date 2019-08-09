@@ -43,16 +43,19 @@ namespace GoGoGo.DataStorage
         public DataRepoBase(string connStr)
         {
             m_ConnStr = connStr;
+            //just for test
             //m_MysqlConn = new MySqlConnection(connStr);
+            //m_MysqlConn.Open();
+            //m_MysqlConn.Close();
         }
 
-        public virtual long Insert(TEntity entity)
+        public virtual ulong Insert(TEntity entity)
         {
-            long r = 0;
+            ulong r = 0;
             using (m_MysqlConn = new MySqlConnection(m_ConnStr))
             {
                 m_MysqlConn.Open();
-                r = m_MysqlConn.Insert<TEntity>(entity);
+                r = (ulong)m_MysqlConn.Insert<TEntity>(entity);
                 m_MysqlConn.Close();
             }
             return r;

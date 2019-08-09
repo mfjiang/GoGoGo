@@ -31,6 +31,7 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
         string wx_name { get; set; }
         string nick_name { get; set; }
         string real_name { get; set; }
+        string title { get; set; }
         string pwd { get; set; }
         string group { get; set; }
         string employee_no { get; set; }
