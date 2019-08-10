@@ -10,9 +10,30 @@ namespace Gogogo.IF
         bool Update(IUser user);
         bool Delete(ulong id);
         IUser Get(ulong id);
+
+        /// <summary>
+        /// limits in 100
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         List<IUser> FindByNickName(string name);
+        /// <summary>
+        /// limits in 100
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         List<IUser> FindByRealName(string name);
+        /// <summary>
+        ///  limits in 100
+        /// </summary>
+        /// <param name="mobile"></param>
+        /// <returns></returns>
         List<IUser> FindByMoblie(string mobile);
+        /// <summary>
+        ///  limits in 100
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         List<IUser> FindByEmail(string email);
     }
 }
