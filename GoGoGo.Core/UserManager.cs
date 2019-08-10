@@ -11,9 +11,11 @@ namespace GoGoGo.Core
 {
     public class UserManager : IUserManager
     {
+        #region private fields
         private UserRepo m_UserRepo;
         private UserGroupRepo m_UserGroupRepo;
         private string m_ConnStr;
+        #endregion
 
         public UserManager(string connstr)
         {
@@ -53,12 +55,42 @@ namespace GoGoGo.Core
             return (IUser)m_UserRepo.Get(id);
         }
 
-        List<IUser> IUserManager.Find(string sqlQueryNoWhere, object paramas)
+        List<IUser> IUserManager.FindByNickName(string name)
+        {
+            DynamicParameters sp = new DynamicParameters();            
+            sp.Add("@nick_name", name);
+            var ul = Find("`nick_name` like concat('%',@nick_name,'%')", sp);
+            return ul;
+        }
+        List<IUser> IUserManager.FindByRealName(string name)
+        {
+            DynamicParameters sp = new DynamicParameters();
+            sp.Add("@real_name", name);
+            var ul = Find("`real_name` like concat('%',@real_name,'%')", sp);
+            return ul;
+        }
+        List<IUser> IUserManager.FindByMoblie(string mobile)
+        {
+            DynamicParameters sp = new DynamicParameters();
+            sp.Add("@mobile_no", mobile);
+            var ul = Find("`mobile_no` like concat('%',@mobile_no,'%')", sp);
+            return ul;
+        }
+        List<IUser> IUserManager.FindByEmail(string email)
+        {
+            DynamicParameters sp = new DynamicParameters();
+            sp.Add("@email", email);
+            var ul = Find("`email` like concat('%',@email,'%')", sp);
+            return ul;
+        }
+        #endregion
+
+        private List<IUser> Find(string sqlQueryNoWhere, object paramas)
         {
             string querybase = $"select * from user where {sqlQueryNoWhere.Replace("where", "")} order by `id` desc limit 100";
             List<IUser> ls = new List<IUser>();
-            CommandDefinition cmdd = new CommandDefinition(querybase, paramas,null,null, System.Data.CommandType.Text, CommandFlags.Buffered);
-            
+            CommandDefinition cmdd = new CommandDefinition(querybase, paramas, null, null, System.Data.CommandType.Text, CommandFlags.Buffered);
+
             var ul = m_UserRepo.Query(cmdd);
             for (int i = 0; i < ul.Count(); i++)
             {
@@ -66,6 +98,5 @@ namespace GoGoGo.Core
             }
             return ls;
         }
-        #endregion
     }
 }
