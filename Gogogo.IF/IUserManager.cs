@@ -10,6 +10,6 @@ namespace Gogogo.IF
         bool Update(IUser user);
         bool Delete(ulong id);
         IUser Get(ulong id);
-        List<IUser> Find(string sqlQueryNoWhere, params object[] paramas);
+        List<IUser> Find(string sqlQueryNoWhere, object paramas);
     }
 }

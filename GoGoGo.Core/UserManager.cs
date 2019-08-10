@@ -53,15 +53,16 @@ namespace GoGoGo.Core
             return (IUser)m_UserRepo.Get(id);
         }
 
-        List<IUser> IUserManager.Find(string sqlQueryNoWhere, params object[] paramas)
+        List<IUser> IUserManager.Find(string sqlQueryNoWhere, object paramas)
         {
-            string querybase = $"select * from user where {sqlQueryNoWhere.Replace("where", "")}";
+            string querybase = $"select * from user where {sqlQueryNoWhere.Replace("where", "")} order by `id` desc limit 100";
             List<IUser> ls = new List<IUser>();
-            CommandDefinition cmdd = new CommandDefinition(sqlQueryNoWhere, paramas);
+            CommandDefinition cmdd = new CommandDefinition(querybase, paramas,null,null, System.Data.CommandType.Text, CommandFlags.Buffered);
+            
             var ul = m_UserRepo.Query(cmdd);
             for (int i = 0; i < ul.Count(); i++)
             {
-                ls.Add((IUser)ul.Take(i + 1));
+                ls.Add((IUser)ul.Take(i + 1).FirstOrDefault());
             }
             return ls;
         }

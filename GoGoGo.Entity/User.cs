@@ -38,7 +38,8 @@ namespace Gogogo.Entity
         public string real_name { get; set; }
         public string title { get; set; }
         public string pwd { get; set; }
-        public string group { get; set; }
+        public string work_groups { get; set; }
+        public string roles { get; set; }
         public string employee_no { get; set; }
         public string mobile_no { get; set; }
         public string email { get; set; }
