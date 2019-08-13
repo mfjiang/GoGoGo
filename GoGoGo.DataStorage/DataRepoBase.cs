@@ -137,6 +137,186 @@ namespace GoGoGo.DataStorage
             return r;
         }
 
+        /// <summary>
+        /// get data page
+        /// </summary>
+        /// <param name="sqlQuery">sql command，without 'where'</param>
+        /// <param name="orderBy">order command，without 'order by'</param>
+        /// <param name="fields">fields，'*' as default</param>
+        /// <param name="pageSize">page size</param>
+        /// <param name="pageNo">page number</param>        
+        /// <returns></returns>
+        public virtual DataSet GetDataPage(string sqlQuery, string orderBy, string tableName, int pageSize = 10, int pageNo = 1, string fields = "*")
+        {
+            //IN p_table_name        VARCHAR(1024),        /*表名*/
+            //IN p_fields            VARCHAR(1024),        /*查询字段*/
+            //IN p_page_size         INT,                  /*每页记录数*/
+            //IN p_page_now          INT,                  /*当前页*/
+            //IN p_order_string      VARCHAR(128),         /*排序条件(包含ORDER关键字,可为空)*/
+            //IN p_where_string      VARCHAR(1024),        /*WHERE条件(包含WHERE关键字,可为空)*/
+            //OUT p_out_rows          INT
+
+            var p1 = new MySqlParameter("@p_table_name", tableName)
+            {
+                Direction = ParameterDirection.Input
+            };
+
+            var p2 = new MySqlParameter("@p_fields", string.IsNullOrWhiteSpace(fields) ? "*" : fields)
+            {
+                Direction = ParameterDirection.Input
+            };
+
+            var p3 = new MySqlParameter("@p_page_size", pageSize)
+            {
+                Direction = ParameterDirection.Input
+            };
+
+            var p4 = new MySqlParameter("@p_page_now", pageNo)
+            {
+                Direction = ParameterDirection.Input
+            };
+
+            var p5 = new MySqlParameter("@p_order_string", string.IsNullOrWhiteSpace(orderBy) ? "" : " order by " + orderBy)
+            {
+                Direction = ParameterDirection.Input
+            };
+
+            var p6 = new MySqlParameter("@p_where_string", string.IsNullOrWhiteSpace(sqlQuery) ? "" : " where " + sqlQuery)
+            {
+                Direction = ParameterDirection.Input
+            };
+
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+                p1,p2,p3,p4,p5,p6
+            };
+            DataSet ds = null;
+
+            if (parameters.Length > 0)
+            {
+                string sql =
+                    $"call get_data_pager({"@p_table_name"},{"@p_fields"},{"@p_page_size"},{"@p_page_now"},{"@p_order_string"},{"@p_where_string"})";
+                using (MySqlConnection conn =new MySqlConnection(m_ConnStr))
+                {
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    ds = MySqlHelper.ExecuteDataset(conn, sql, parameters);
+                    conn.Close();
+                }
+            }
+            return ds;
+        }
+
+        /// <summary>
+        /// convert data table to a dictionary list
+        /// </summary>
+        /// <param name="dt">data table</param>
+        /// <returns></returns>
+        public virtual List<Dictionary<string, object>> TableToList(DataTable dt)
+        {
+            List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
+
+            if (dt != null)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    list.Add(RowToDictionary(dr));
+                }
+            }
+
+            return list;
+        }
+        /// <summary>
+        /// convert data row to a dictionary
+        /// </summary>
+        /// <param name="row">data row</param>
+        /// <returns></returns>
+        public virtual Dictionary<string, object> RowToDictionary(DataRow row)
+        {
+            Dictionary<string, object> dic = new Dictionary<string, object>();
+            DataTable temp = row.Table;
+            for (int i = 0; i < temp.Columns.Count; i++)
+            {
+                dic.Add(temp.Columns[i].ColumnName, row[i]);
+            }
+
+            return dic;
+        }
+
+        /// <summary>
+        /// convert a dictionary to an entity
+        /// </summary>
+        /// <typeparam name="T">entity class</typeparam>
+        /// <param name="dic">data dictionary</param>
+        /// <returns></returns>
+        public virtual T DicToObject<T>(Dictionary<string, object> dic) where T : new()
+        {
+            var md = new T();
+            foreach (var d in dic)
+            {
+                var filed = d.Key;
+                var value = d.Value;
+                var pinfo = md.GetType().GetProperty(filed);
+                if (pinfo != null && value != null && !value.GetType().Equals(typeof(DBNull)))
+                {
+                    if (pinfo.PropertyType.Equals(typeof(Boolean)))
+                    {
+                        if (int.Parse(d.Value.ToString()) == 0)
+                        {
+                            value = false;
+                        }
+                        else
+                        {
+                            value = true;
+                        }
+                    }
+
+                    if (pinfo.PropertyType.Equals(typeof(DateTime?)))
+                    {
+                        DateTime dateTime;
+                        if (DateTime.TryParse(d.Value.ToString(), out dateTime))
+                        {
+                            value = dateTime;
+                        }
+                        else
+                        {
+                            value = null;
+                        }
+                    }
+
+                    pinfo.SetValue(md, value);
+
+                }
+            }
+            return md;
+        }
+
+        /// <summary>
+        /// convert a data row to  an entity
+        /// </summary>
+        /// <typeparam name="T">entity class</typeparam>
+        /// <param name="row">data row</param>
+        /// <returns></returns>
+        public virtual T RowToEntity<T>(DataRow row) where T : new()
+        {
+            T entity = default(T);
+            if (row != null)
+            {
+                try
+                {
+                    Dictionary<string, object> dic = RowToDictionary(row);
+                    entity = DicToObject<T>(dic);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("转换数据实体失败", ex);
+                }
+            }
+            return entity;
+        }
+
         public virtual bool Delete(TEntity entity)
         {
             bool r = false;
