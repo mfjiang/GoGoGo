@@ -37,5 +37,10 @@ namespace GoGoGo.DataStorage
         {
 
         }
+
+        public DataSet GetDataPage(string sqlQuery, string orderBy, int pageSize = 50, int pageNo = 1, string fields = "*")
+        {
+            return base.GetDataPage(sqlQuery, orderBy, "worktask", pageSize, pageNo, fields);
+        }
     }
 }

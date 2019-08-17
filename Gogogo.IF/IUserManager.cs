@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace Gogogo.IF
@@ -35,5 +36,8 @@ namespace Gogogo.IF
         /// <param name="email"></param>
         /// <returns></returns>
         List<IUser> FindByEmail(string email);
+
+        DataSet GetDataPage(string sqlQuery, string orderBy, int pageSize, int pageNo, string fields);
+        
     }
 }
