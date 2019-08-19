@@ -1,0 +1,6 @@
+.count-to-wrapper .content-outer {
+  display: inline-block;
+}
+.count-to-wrapper .content-outer .count-to-unit-text {
+  font-style: normal;
+}
