@@ -23,7 +23,7 @@ CREATE TABLE `worktask` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `workunit_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `creator_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `principal_id` bigint(20) NOT NULL DEFAULT '0',
+  `executor_id` bigint(20) NOT NULL DEFAULT '0',
   `task_type` int(4) NOT NULL DEFAULT '0',
   `title` varchar(255) NOT NULL,
   `confirm_state` int(4) NOT NULL DEFAULT '0',

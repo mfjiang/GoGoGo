@@ -27,7 +27,7 @@ CREATE TABLE `workunit` (
   `version_id` bigint(20) NOT NULL,
   `module_id` bigint(20) NOT NULL,
   `creator_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `principal_id` bigint(20) NOT NULL DEFAULT '0',
+  `executor_id` bigint(20) NOT NULL DEFAULT '0',
   `members` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `start_date` datetime DEFAULT NULL,

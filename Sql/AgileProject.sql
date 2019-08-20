@@ -24,7 +24,7 @@ CREATE TABLE `agileproject` (
   `title` varchar(255) NOT NULL,
   `creator_id` bigint(20) NOT NULL,
   `chife_manager_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `principal_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `executor_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `level` int(3) DEFAULT '0',
   `state` int(3) DEFAULT NULL,
   `start_date` datetime DEFAULT NULL,
