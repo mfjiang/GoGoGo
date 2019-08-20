@@ -17,7 +17,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoGoGo.Core", "GoGoGo.Core\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoGoGo.DataStorage.UnitTest", "UnitTest\GoGoGo.DataStorage.UnitTest\GoGoGo.DataStorage.UnitTest.csproj", "{49404C16-C8E0-457C-81F4-73D4CB2CAAB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoGoGo.WebApp", "GoGoGo.WebApp\GoGoGo.WebApp.csproj", "{16137B30-D5E4-4DEA-B036-7885837A3C0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoGoGo.WebApp", "GoGoGo.WebApp\GoGoGo.WebApp.csproj", "{16137B30-D5E4-4DEA-B036-7885837A3C0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C8A0E22A-B1E2-49C7-AF86-1A36C1502938}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

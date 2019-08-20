@@ -1,0 +1,101 @@
+.clearfix:before,
+.clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    zoom: 1;
+}
+.clearfix:after {
+    clear: both;
+}
+* html .clearfix {
+    zoom: 1;
+}
+*:first-child + html .clearfix {
+    zoom: 1;
+}
+.hidden {
+    border: 0 !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px !important;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px;
+}
+.display-block {
+    display: block;
+}
+.display-none,
+.display-hide {
+    display: none;
+}
+.inline {
+    display: inline;
+}
+.text-right {
+    text-align: right !important;
+}
+.text-left {
+    text-align: left !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.pull-left {
+    float: left !important;
+}
+.pull-right {
+    float: right !important;
+}
+
+/****/
+pre {
+    font-size: 12px;
+    padding: 16px;
+    background-color: rgba(0, 69, 120, 1);
+    color: #fff;
+    text-overflow: clip;
+    word-break: break-all;
+    word-wrap: break-word;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    display: block;
+}
+
+/*****/
+.search-bar {
+    margin-bottom: 15px;
+
+    .searbar-button {
+        text-align: center;
+    }
+}
+
+.table-toolbar {
+    margin-bottom: 10px;
+
+    .el-button-group + .el-button-group {
+        margin-left: 10px;
+    }
+}
+
+.table-searchbar {
+    // margin-bottom: 10px;
+}
+
+.table-footer {
+    margin-top: 10px;
+}
+
+.btn-block {
+    width: 100%;
+    display: block;
+}
