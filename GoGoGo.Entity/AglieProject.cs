@@ -36,7 +36,7 @@ namespace Gogogo.Entity
         public string title { get; set; }
         public ulong creator_id { get; set; }
         public ulong chife_manager_id { get; set; }
-        public ulong principal_id { get; set; }
+        public ulong executor_id { get; set; }
         public int level { get; set; }
         public int state { get; set; }
         public DateTime? start_date { get; set; }

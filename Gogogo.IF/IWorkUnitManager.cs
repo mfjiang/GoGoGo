@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
@@ -12,7 +12,7 @@ namespace Gogogo.IF
         bool Delete(ulong id);
         IAgileProject Get(ulong id);
         DataSet GetDataPage(string sqlQuery, string orderBy, int pageSize, int pageNo, string fields);
-        List<IWorkUnit> FindChilds(ulong projectID);
-        List<IWorkUnit> FindChilds(ulong projectID,ulong parentUnitID);
+        List<IWorkUnit> LoadChilds(ulong projectID);
+        List<IWorkUnit> LoadChilds(ulong projectID,ulong parentUnitID);
     }
 }

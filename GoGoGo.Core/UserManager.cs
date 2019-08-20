@@ -1,4 +1,4 @@
-﻿using Gogogo.IF;
+using Gogogo.IF;
 using System;
 using System.Text;
 using System.Linq;

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -27,15 +27,15 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
     {
         ulong id { get; set; }
         ulong creator_id { get; set; }
-        ulong principal_id { get; set; }
+        ulong executor_id { get; set; }
         int task_type { get; set; }
         string title { get; set; }
         int level { get; set; }
         int state { get; set; }
         ulong workunit_id { get; set; }
         ulong test_record_id { get; set; }
-        int confirm_state { get; set; } // confirm if access the task by principal member
-        int review_state { get; set; } // review the task by manager
+        int confirm_state { get; set; } // confirm if access the task by executor member
+		int review_state { get; set; } // review the task by manager
         ulong confirm_by_id { get; set; }
         ulong review_by_id { get; set; }
         DateTime? confirm_time { get; set; }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -33,7 +33,7 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
         ulong version_id { get; set; }
         ulong module_id { get; set; }
         ulong creator_id { get; set; }
-        ulong principal_id { get; set; }
+        ulong executor_id { get; set; }
         string members { get; set; }
         string title { get; set; }
         DateTime? start_date { get; set; }

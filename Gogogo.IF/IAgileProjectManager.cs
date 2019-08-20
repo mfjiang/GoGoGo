@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
@@ -17,7 +17,7 @@ namespace Gogogo.IF
         bool MoveWorkUnit(ulong projectID, ulong fromUnitID,ulong toUnitID);
         List<IAgileProject> FindByCreator(ulong creatorID);
         List<IAgileProject> FindByChifeManager(ulong chifeManagerID);
-        List<IAgileProject> FindByPrincipal(ulong principalID);
+        List<IAgileProject> FindByExecutor(ulong executorID);
         double GetProgress(ulong projectID);
         int CountTask(ulong projectID);
         int CountTask(ulong projectID, ulong workUnitID);

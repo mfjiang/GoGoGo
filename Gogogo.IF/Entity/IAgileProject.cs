@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -30,7 +30,7 @@ namespace Gogogo.IF
         string title { get; set; }
         ulong creator_id { get; set; }
         ulong chife_manager_id { get; set; }
-        ulong principal_id { get; set; }
+        ulong executor_id { get; set; }
         int level { get; set; }
         int state { get; set; }
         DateTime? start_date { get; set; }
