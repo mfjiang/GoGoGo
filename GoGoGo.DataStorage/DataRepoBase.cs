@@ -311,7 +311,7 @@ namespace GoGoGo.DataStorage
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("转换数据实体失败", ex);
+                    throw new Exception("convert to dictionary format failed", ex);
                 }
             }
             return entity;
