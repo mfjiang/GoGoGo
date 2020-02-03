@@ -7,6 +7,7 @@ using GoGoGo.DataStorage;
 using Gogogo.Entity;
 using Dapper;
 using System.Data;
+using Gogogo.IF.Entity;
 
 namespace GoGoGo.Core
 {
@@ -51,7 +52,7 @@ namespace GoGoGo.Core
         }
 
         #region interface implementation
-        ulong IUserManager.Add(IUser user)
+        ulong IUserManager.AddUser(IUser user)
         {
             ulong uid = 0;
             uid = m_UserRepo.Insert((User)user);
@@ -65,7 +66,7 @@ namespace GoGoGo.Core
             return done;
         }
 
-        bool IUserManager.Delete(ulong id)
+        bool IUserManager.DeleteUser(ulong id)
         {
             bool done = false;
             done = m_UserRepo.Delete("user", "id", id);
@@ -112,18 +113,136 @@ namespace GoGoGo.Core
             if (String.IsNullOrEmpty(fields)) { fields = "*"; }
             return m_UserRepo.GetDataPage(sqlQuery, orderBy, pageSize, pageNo, fields);
         }
+
+        #region about user group
+        IUserGroup IUserManager.AddGroup(string groupName, ulong cratorId, params ulong[] userIds)
+        {
+            UserGroup group = null;
+
+            if (!String.IsNullOrEmpty(groupName))
+            {
+                group = new UserGroup();
+                group.created = DateTime.Now;
+                group.creator_id = cratorId;
+                group.group_name = groupName;
+                group.users = "";
+
+                if (userIds.Length > 0)
+                {
+                    var ids = "";
+					for (int i = 0; i < userIds.Length; i++)
+					{
+						ids += $"{userIds[i]},";
+					}
+                }
+                m_UserGroupRepo.Insert(group);
+            }
+
+            return group;
+		}
+
+        bool IUserManager.RemoveGroup(string groupName)
+        {
+            bool done = false;
+            if (!String.IsNullOrEmpty(groupName))
+            {
+                var temp = m_UserGroupRepo.Get(groupName);
+                if (temp != null)
+                {
+                    done = m_UserGroupRepo.Delete(temp);
+                }
+            }
+            return done;
+		}
+
+        void IUserManager.MoveInGroup(string groupName, ulong userId)
+        {
+            if (!String.IsNullOrEmpty(groupName))
+            {
+                var temp = m_UserGroupRepo.Get(groupName);
+                if (temp != null)
+                {
+                    string[] ids = temp.users.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                    if (ids.Length > 0 && !ids.Contains(userId.ToString()))
+                    {
+                        temp.users = $"{temp.users},{userId}";
+                        m_UserGroupRepo.Update(temp);
+                    }
+                }
+            }
+        }
+
+        void IUserManager.MoveOutGroup(string groupName, ulong userId)
+        {
+            if (!String.IsNullOrEmpty(groupName))
+            {
+                var temp = m_UserGroupRepo.Get(groupName);
+                if (temp != null)
+                {
+                    string[] ids = temp.users.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                    if (ids.Length > 0 && ids.Contains(userId.ToString()))
+                    {
+                        temp.users = "";
+                        for (int i = 0; i < ids.Length; i++)
+                        {
+                            if (!ids[i].Equals(userId.ToString()))
+                            {
+                                temp.users += $"{ids[i]},";
+                            }
+						}
+                        
+                        m_UserGroupRepo.Update(temp);
+                    }
+                }
+            }
+        }
+
+        IUserGroup IUserManager.GetGroup(string groupName)
+        {
+            UserGroup group = null;
+            if (!String.IsNullOrEmpty(groupName))
+            {
+				group = m_UserGroupRepo.Get(groupName);
+            }
+            return group;
+        }
+
+        List<IUserGroup> IUserManager.FindGroups(string groupName)
+        {
+            DynamicParameters sp = new DynamicParameters();
+            sp.Add("@group_name", groupName);
+            var ugl = FindGroups("`group_name` like concat('%',@group_name,'%')", sp);
+            return ugl;
+
+        }
         #endregion
+
+        #endregion
+
+        private List<IUserGroup> FindGroups(string sqlQueryNoWhere, object paramas)
+        {
+            string querybase = $"select * from usergroup where {sqlQueryNoWhere.Replace("where", " ")} order by `group_name` desc limit 999";
+            List<IUserGroup> ls = new List<IUserGroup>();
+            CommandDefinition cmdd = new CommandDefinition(querybase, paramas, null, null, System.Data.CommandType.Text, CommandFlags.Buffered);
+
+            var ul = m_UserGroupRepo.Query(cmdd);
+            for (int i = 0; i < ul.Count(); i++)
+            {
+                ls.Add((IUserGroup)ul.ElementAt(i));
+            }
+            return ls;
+        }
 
         private List<IUser> Find(string sqlQueryNoWhere, object paramas)
         {
-            string querybase = $"select * from user where {sqlQueryNoWhere.Replace("where", "")} order by `id` desc limit 100";
+            string querybase = $"select * from user where {sqlQueryNoWhere.Replace("where", " ")} order by `id` desc limit 100";
             List<IUser> ls = new List<IUser>();
             CommandDefinition cmdd = new CommandDefinition(querybase, paramas, null, null, System.Data.CommandType.Text, CommandFlags.Buffered);
 
             var ul = m_UserRepo.Query(cmdd);
             for (int i = 0; i < ul.Count(); i++)
             {
-                ls.Add((IUser)ul.Take(i + 1).FirstOrDefault());
+                ls.Add((IUser)ul.ElementAt(i));
             }
             return ls;
         }

@@ -2,22 +2,25 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using Gogogo.IF.Entity;
 
 namespace Gogogo.IF
 {
     public interface IUserManager
     {
-        ulong Add(IUser user);
-        bool Update(IUser user);
-        bool Delete(ulong id);
-        IUser Get(ulong id);
+        #region about user
 
-        /// <summary>
-        /// limits in 100
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        List<IUser> FindByNickName(string name);
+        ulong AddUser(IUser user);
+        bool Update(IUser user);
+        bool DeleteUser(ulong id);
+        IUser Get(ulong id);
+		
+		/// <summary>
+		/// limits in 100
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		List<IUser> FindByNickName(string name);
         /// <summary>
         /// limits in 100
         /// </summary>
@@ -38,6 +41,15 @@ namespace Gogogo.IF
         List<IUser> FindByEmail(string email);
 
         DataSet GetDataPage(string sqlQuery, string orderBy, int pageSize, int pageNo, string fields);
-        
-    }
+        #endregion
+
+        #region about user group
+        IUserGroup AddGroup(string groupName, ulong cratorId, params ulong[] userIds);
+        bool RemoveGroup(string groupName);
+        void MoveInGroup(string groupName, ulong userId);
+        void MoveOutGroup(string groupName, ulong userId);
+        IUserGroup GetGroup(string groupName);
+        List<IUserGroup> FindGroups(string groupName);
+		#endregion
+	}
 }
