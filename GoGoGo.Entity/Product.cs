@@ -33,6 +33,7 @@ namespace Gogogo.Entity
     {
         [Key]
         public ulong id { get; set; }
+        public int product_type { get; set; }
         public string code { get; set; }
         public string name { get; set; }
         public string remark { get; set; }
@@ -43,6 +44,7 @@ namespace Gogogo.Entity
         public ulong last_editor_id { get; set; }
         public int level { get; set; }
         public int state { get; set; }
+        public DateTime? last_updated { get; set; }
         public DateTime created { get; set; }
     }
 }

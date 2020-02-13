@@ -221,7 +221,7 @@ namespace GoGoGo.Core
 
         private List<IUserGroup> FindGroups(string sqlQueryNoWhere, object paramas)
         {
-            string querybase = $"select * from usergroup where {sqlQueryNoWhere.Replace("where", " ")} order by `group_name` desc limit 999";
+            string querybase = $"select * from usergroup where {sqlQueryNoWhere.Replace("where", " ")} order by `group_name` asc limit 999";
             List<IUserGroup> ls = new List<IUserGroup>();
             CommandDefinition cmdd = new CommandDefinition(querybase, paramas, null, null, System.Data.CommandType.Text, CommandFlags.Buffered);
 

@@ -26,6 +26,7 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
     public interface IProduct
     {
         ulong id { get; set; }
+		int product_type { get; set; }
         string code { get; set; }
         string name { get; set; }
         string remark { get; set; }
@@ -36,6 +37,7 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
         ulong last_editor_id { get; set; }
         int level { get; set; }
         int state { get; set; }
+		DateTime? last_updated { get; set; }
         DateTime created { get; set; }
     }
 

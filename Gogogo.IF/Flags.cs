@@ -26,12 +26,14 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
 
     public enum TestReportType : int
     {
-        Bug,
+        Bug = 1,
         Suggestion,
         Improvement
     }
 
-    public enum TaskType : int
+    //todo: Make product types and task types configurable.
+
+    public enum DefaultTaskType : int
     {
         Standard = 100,
         ProjectManagement,
@@ -39,10 +41,22 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
         ProductDesign,
         UIDesign,
         UEDesign,
+		MediaDesign,
         Development,
         Research,
+		Documention,
         Test,
         Publish,
         Deploy
+    }
+
+    public enum DefaultProductType : int
+    {
+        Software = 1000,
+        SoftwareAndHardwareIntegration,
+        BuildingsAndInfrastructure,
+        MultimediaAndPublicationsAndDesign,
+        ResearchSubjects,
+        TechnicalEquipments
     }
 }
