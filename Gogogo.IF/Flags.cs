@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Gogogo.IF
+namespace GoGoGo.Abstract
 {
     /*
 Copyright (C)  2019 Jiang Ming Feng
@@ -53,9 +53,9 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
     public enum DefaultProductType : int
     {
         Software = 1000,
-        SoftwareAndHardwareIntegration,
+        SystemIntegration,
         BuildingsAndInfrastructure,
-        MultimediaAndPublicationsAndDesign,
+        IdesaAndDesign,
         ResearchSubjects,
         TechnicalEquipments
     }

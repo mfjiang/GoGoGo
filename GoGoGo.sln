@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gogogo.IF", "Gogogo.IF\Gogogo.IF.csproj", "{DE364D31-7D24-4A7A-9B35-A740342B469C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoGoGo.Abstract", "Gogogo.IF\GoGoGo.Abstract.csproj", "{DE364D31-7D24-4A7A-9B35-A740342B469C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogManCore", "LogManCore\LogManCore.csproj", "{F9854437-9251-4B49-AC31-F7346AFE6FBE}"
 EndProject

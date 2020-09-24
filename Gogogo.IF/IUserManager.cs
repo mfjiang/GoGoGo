@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
-using Gogogo.IF.Entity;
+using GoGoGo.Abstract.Entity;
 
-namespace Gogogo.IF
+namespace GoGoGo.Abstract
 {
     public interface IUserManager
     {

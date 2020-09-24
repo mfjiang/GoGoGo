@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Gogogo.IF
+namespace GoGoGo.Abstract.Entity
 {
     public interface IIssues
     {

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
-using Gogogo.IF;
+using GoGoGo.Abstract;
+using GoGoGo.Abstract.Entity;
 
-namespace Gogogo.Entity
+namespace GoGoGo.Entity
 {
     /*
     Copyright (C)  2019 Jiang Ming Feng

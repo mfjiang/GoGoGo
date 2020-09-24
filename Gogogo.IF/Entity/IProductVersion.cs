@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Gogogo.IF
+namespace GoGoGo.Abstract.Entity
 {
     /*
 Copyright (C)  2019 Jiang Ming Feng

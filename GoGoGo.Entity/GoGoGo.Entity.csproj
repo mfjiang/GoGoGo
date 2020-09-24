@@ -6,6 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Gogogo.IF\Gogogo.IF.csproj" />
+    <ProjectReference Include="..\Gogogo.IF\GoGoGo.Abstract.csproj" />
   </ItemGroup>
 </Project>
