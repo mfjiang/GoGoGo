@@ -33,8 +33,10 @@ namespace GoGoGo.Entity
     {
         [Key]
         public ulong id { get; set; }
+        public string mobile_no { get; set; }
         public string wx_uuid { get; set; }
         public string wx_name { get; set; }
+        public string wx_avata_url { get; set; }
         public string nick_name { get; set; }
         public string real_name { get; set; }
         public string title { get; set; }

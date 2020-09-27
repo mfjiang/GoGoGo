@@ -27,7 +27,7 @@ namespace GoGoGo.Entity
     */
 
     [Serializable]
-    [Table("testrecord")]
+    [Table("test_record")]
     public class TestRecord:ITestRecord
     {
         [Key]

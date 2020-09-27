@@ -27,7 +27,7 @@ namespace GoGoGo.Entity
     */
 
     [Serializable]
-    [Table("productversion")]
+    [Table("product_version")]
     public class ProductVersion:IProductVersion
     {
         [Key]

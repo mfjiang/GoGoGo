@@ -34,7 +34,7 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
         public ulong product_id { get; set; }
         public ulong creator_id { get; set; }
         public ulong last_editor_id { get; set; }
-        public string from_who { get; set; }
+        public string from_whom { get; set; }
         public string title { get; set; }
         public string remark { get; set; }
         public int level { get; set; }

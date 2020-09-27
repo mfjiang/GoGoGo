@@ -27,6 +27,9 @@ namespace GoGoGo.WebApp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddMvc()
+				.AddMvcOptions(options=> {
+					options.EnableEndpointRouting = false;
+				})
 				.AddJsonOptions(options =>
 				{
 					options.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Local;
@@ -45,6 +48,7 @@ namespace GoGoGo.WebApp
 			{
 				c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
 			});
+			
 
 		}
 

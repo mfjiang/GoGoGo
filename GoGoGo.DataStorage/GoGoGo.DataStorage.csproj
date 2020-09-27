@@ -13,8 +13,8 @@
   <ItemGroup>
     <ProjectReference Include="..\DotNetCoreConfiguration\DotNetCoreConfiguration.csproj" />
     <ProjectReference Include="..\GoGoGo.Entity\GoGoGo.Entity.csproj" />
-    <ProjectReference Include="..\Gogogo.IF\Gogogo.IF.csproj" />
     <ProjectReference Include="..\LogManCore\LogManCore.csproj" />
+    <ProjectReference Include="..\Gogogo.IF\GoGoGo.Abstract.csproj" />
   </ItemGroup>
 
 </Project>

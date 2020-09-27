@@ -27,8 +27,10 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-13
     public interface IUser
     {
         ulong id { get; set; }
+        string mobile_no { get; set; }
         string wx_uuid { get; set; }
         string wx_name { get; set; }
+        string wx_avata_url { get; set; }
         string nick_name { get; set; }
         string real_name { get; set; }
         string title { get; set; }

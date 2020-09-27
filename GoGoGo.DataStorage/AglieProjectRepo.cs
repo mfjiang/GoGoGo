@@ -8,7 +8,7 @@ using Dapper.Contrib.Extensions;
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
-using Gogogo.Entity;
+using GoGoGo.Entity;
 
 namespace GoGoGo.DataStorage
 {
@@ -41,7 +41,7 @@ namespace GoGoGo.DataStorage
 
         public DataSet GetDataPage(string sqlQuery, string orderBy, int pageSize = 50, int pageNo = 1, string fields = "*")
         {
-            return base.GetDataPage(sqlQuery, orderBy, "aglieproject", pageSize, pageNo, fields);
+            return base.GetDataPage(sqlQuery, orderBy, "aglie_project", pageSize, pageNo, fields);
         }
     }
 }

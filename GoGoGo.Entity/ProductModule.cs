@@ -27,7 +27,7 @@ namespace GoGoGo.Entity
     */
 
     [Serializable]
-    [Table("productmodule")]
+    [Table("product_module")]
     public class ProductModule: IProductModule
     {
         [Key]

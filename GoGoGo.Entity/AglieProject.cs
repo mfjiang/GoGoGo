@@ -28,7 +28,7 @@ namespace GoGoGo.Entity
     */
 
     [Serializable]
-    [Table("aglieproject")]
+    [Table("aglie_project")]
     public class AglieProject : IAgileProject
     {
         [Key]

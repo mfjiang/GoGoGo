@@ -27,7 +27,7 @@ namespace GoGoGo.Entity
     */
 
     [Serializable]
-    [Table("worktask")]
+    [Table("work_task")]
     public class WorkTask:IWorkTask
     {
         [Key]

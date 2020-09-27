@@ -27,7 +27,7 @@ namespace GoGoGo.Entity
     */
 
     [Serializable]
-    [Table("usergroup")]
+    [Table("user_group")]
     public class UserGroup:IUserGroup
     {
         [Key]

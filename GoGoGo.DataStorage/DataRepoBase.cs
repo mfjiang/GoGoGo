@@ -228,6 +228,7 @@ namespace GoGoGo.DataStorage
 
             return list;
         }
+
         /// <summary>
         /// convert data row to a dictionary
         /// </summary>

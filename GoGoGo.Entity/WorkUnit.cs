@@ -26,7 +26,7 @@ namespace GoGoGo.Entity
     Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
     */
     [Serializable]
-    [Table("workunit")]
+    [Table("work_unit")]
     public class WorkUnit : IWorkUnit
     {
         [Key]
