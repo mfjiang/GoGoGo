@@ -44,7 +44,6 @@ namespace GoGoGo.Entity
         public string work_groups { get; set; }
         public string roles { get; set; }
         public string employee_no { get; set; }
-        public string mobile_no { get; set; }
         public string email { get; set; }
         public bool is_banned { get; set; }
         public DateTime? last_login_date { get; set; }

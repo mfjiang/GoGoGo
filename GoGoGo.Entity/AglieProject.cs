@@ -35,6 +35,7 @@ namespace GoGoGo.Entity
         public ulong id { get; set; }
         public string title { get; set; }
         public ulong creator_id { get; set; }
+        public ulong last_editor_id { get; set; }
         public ulong chife_manager_id { get; set; }
         public ulong executor_id { get; set; }
         public int level { get; set; }
