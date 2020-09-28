@@ -7,7 +7,7 @@ using Dapper.Contrib.Extensions;
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
-using Gogogo.Entity;
+using GoGoGo.Abstract.Entity;
 
 namespace GoGoGo.DataStorage
 {
@@ -31,7 +31,7 @@ namespace GoGoGo.DataStorage
    Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
    */
 
-    public class WorkTaskRepo : DataRepoBase<WorkTask>
+    public class WorkTaskRepo : DataRepoBase<IWorkTask>
     {
         public WorkTaskRepo(string connStr) : base(connStr)
         {
@@ -40,7 +40,7 @@ namespace GoGoGo.DataStorage
 
         public DataSet GetDataPage(string sqlQuery, string orderBy, int pageSize = 50, int pageNo = 1, string fields = "*")
         {
-            return base.GetDataPage(sqlQuery, orderBy, "worktask", pageSize, pageNo, fields);
+            return base.GetDataPage(sqlQuery, orderBy, "work_task", pageSize, pageNo, fields);
         }
     }
 }

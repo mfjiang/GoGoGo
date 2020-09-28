@@ -43,10 +43,15 @@ namespace GoGoGo.DataStorage
         public DataRepoBase(string connStr)
         {
             m_ConnStr = connStr;
-            //just for test
-            //m_MysqlConn = new MySqlConnection(connStr);
-            //m_MysqlConn.Open();
-            //m_MysqlConn.Close();
+			//just for test
+			//m_MysqlConn = new MySqlConnection(connStr);
+			//m_MysqlConn.Open();
+			//m_MysqlConn.Close();
+
+			SqlMapperExtensions.TableNameMapper = (IUser)=>{
+                return "user";
+            };
+
         }
 
         public virtual ulong Insert(TEntity entity)
@@ -54,6 +59,7 @@ namespace GoGoGo.DataStorage
             ulong r = 0;
             using (m_MysqlConn = new MySqlConnection(m_ConnStr))
             {
+                
                 m_MysqlConn.Open();
                 r = (ulong)m_MysqlConn.Insert<TEntity>(entity);
                 m_MysqlConn.Close();

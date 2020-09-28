@@ -8,7 +8,7 @@ using Dapper.Contrib.Extensions;
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
-using Gogogo.Entity;
+using GoGoGo.Abstract.Entity;
 
 namespace GoGoGo.DataStorage
 {
@@ -32,7 +32,7 @@ namespace GoGoGo.DataStorage
   Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
   */
 
-    public class DiscussionRepo : DataRepoBase<Discussion>
+    public class DiscussionRepo : DataRepoBase<IDiscussion>
     {
         public DiscussionRepo(string connStr) : base(connStr)
         {

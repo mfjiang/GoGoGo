@@ -6,7 +6,7 @@ using MySql.Data.MySqlClient;
 using Dapper;
 using Dapper.Contrib;
 using Dapper.Contrib.Extensions;
-using Gogogo.Entity;
+using GoGoGo.Abstract.Entity;
 
 namespace GoGoGo.DataStorage
 {
@@ -30,7 +30,7 @@ namespace GoGoGo.DataStorage
     Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
     */
 
-    public class IssuesRepo:DataRepoBase<Issues>
+    public class IssuesRepo:DataRepoBase<IIssues>
     {
         public IssuesRepo(string connStr):base(connStr)
         {

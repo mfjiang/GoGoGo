@@ -1,13 +1,13 @@
-using Gogogo.IF;
 using System;
 using System.Text;
 using System.Linq;
 using System.Collections.Generic;
 using GoGoGo.DataStorage;
-using Gogogo.Entity;
 using Dapper;
 using System.Data;
-using Gogogo.IF.Entity;
+using GoGoGo.Abstract;
+using GoGoGo.Abstract.Entity;
+using GoGoGo.Entity;
 
 namespace GoGoGo.Core
 {
@@ -31,6 +31,9 @@ namespace GoGoGo.Core
     Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
     */
 
+    /// <summary>
+	/// Provide manage functions for user
+	/// </summary>
     public class UserManager : IUserManager
     {
         #region private fields
@@ -199,7 +202,7 @@ namespace GoGoGo.Core
 
         IUserGroup IUserManager.GetGroup(string groupName)
         {
-            UserGroup group = null;
+            IUserGroup group = null;
             if (!String.IsNullOrEmpty(groupName))
             {
 				group = m_UserGroupRepo.Get(groupName);
@@ -237,12 +240,15 @@ namespace GoGoGo.Core
         {
             string querybase = $"select * from user where {sqlQueryNoWhere.Replace("where", " ")} order by `id` desc limit 100";
             List<IUser> ls = new List<IUser>();
-            CommandDefinition cmdd = new CommandDefinition(querybase, paramas, null, null, System.Data.CommandType.Text, CommandFlags.Buffered);
+            CommandDefinition cmdd = new CommandDefinition(querybase, paramas, null, null, System.Data.CommandType.Text, CommandFlags.None);
 
             var ul = m_UserRepo.Query(cmdd);
-            for (int i = 0; i < ul.Count(); i++)
+            if (ul != null && ul.Count() > 0)
             {
-                ls.Add((IUser)ul.ElementAt(i));
+                for (int i = 0; i < ul.Count(); i++)
+                {
+                    ls.Add((IUser)ul.ElementAt(i));
+                }
             }
             return ls;
         }

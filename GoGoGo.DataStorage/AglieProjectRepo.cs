@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
 using GoGoGo.Entity;
+using GoGoGo.Abstract.Entity;
 
 namespace GoGoGo.DataStorage
 {
@@ -32,7 +33,7 @@ namespace GoGoGo.DataStorage
    Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
    */
 
-    public class AglieProjectRepo : DataRepoBase<AglieProject>
+    public class AglieProjectRepo : DataRepoBase<IAgileProject>
     {
         public AglieProjectRepo(string connStr) : base(connStr)
         {
