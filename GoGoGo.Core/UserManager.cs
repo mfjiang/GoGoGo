@@ -58,14 +58,14 @@ namespace GoGoGo.Core
         ulong IUserManager.AddUser(IUser user)
         {
             ulong uid = 0;
-            uid = m_UserRepo.Insert((User)user);
+            uid = m_UserRepo.Insert(user);
             return uid;
         }
 
         bool IUserManager.Update(IUser user)
         {
             bool done = false;
-            done = m_UserRepo.Update((User)user);
+            done = m_UserRepo.Update(user);
             return done;
         }
 
