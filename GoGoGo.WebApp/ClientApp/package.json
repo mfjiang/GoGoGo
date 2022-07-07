@@ -14,7 +14,7 @@
         "countup": "1.8.2",
         "element-ui": "^2.11.1",
         "js-cookie": "2.2.0",
-        "moment": "2.24.0",
+        "moment": "2.29.4",
         "qs": "6.7.0",
         "vue": "^2.6.10",
         "vue-router": "^3.0.7",
